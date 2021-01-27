@@ -5,7 +5,7 @@
 This library allows you simply and fast deal with Keychain.
 
 ## Usage
-Add import KeychainManager to your source code.
+Add `import KeychainManager` to your source code.
 
 #### Save values
 
@@ -13,24 +13,24 @@ Since the library uses Generic types, you can pass as a parameter any values tha
 
 ##### Exemples:
 
-All functions above return Bool value as a result.
+All functions above return `Bool` value as a result.
 
-String:
+- String:
 
 ```Swift
 KeychainManager.save(value: "SuperSecretInfo", key: "SomeSecretKey")
 ```
-Int:
+- Int:
 
 ```Swift
 KeychainManager.save(value: 2021, key: "Year")
 ```
-Bool:
+- Bool:
 
 ```Swift
 KeychainManager.save(value: true, key: "Status")
 ```
-Custom Types:
+- Custom Types:
 
 ```Swift
 class BearerResponse: Codable {
@@ -47,16 +47,17 @@ KeychainManager.save(value: bearer, key: "tokenData")
 ###### Use completions:
 
 ```Swift
- KeychainManager.save(value: "Info", key: "key") {
+KeychainManager.save(value: "Info", key: "key") {
         // succes
 } failure: status in 
        // failure
 }
 ```
+------------
 
 #### Get values
 
-Library provides two types of "get" functions.
+Library provides two types of `get` functions.
 
 ##### Examples:
 
@@ -71,7 +72,7 @@ KeychainManager.get(forKey: "SomeSecretKey") { (obj) in
        // succes, type of obj == Any?
 } failure: {
        // failure 
- }
+}
  ```
 
 And the second function accepts the type of object in parameters.
@@ -88,9 +89,11 @@ KeychainManager.get(forKey: "Year ", asType: Int.self) { (obj) in
 }
 ```
 
+------------
+
 #### Update values
 
-Returns Bool as result.
+Returns `Bool` as result.
 
 ```Swift
 KeychainManager.update(value: "2077", forKey: "Year")
@@ -103,6 +106,9 @@ KeychainManager.update(value: "2077", forKey: "Year") {
        // failure
 }
 ```
+
+------------
+
 #### Remove values
 
 ```Swift
